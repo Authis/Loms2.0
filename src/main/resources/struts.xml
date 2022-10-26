@@ -1,0 +1,1141 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+   <constant name="struts.multipart.maxSize" value="1000000" />
+ 
+    <constant name="struts.multipart.saveDir" value="c:/" />
+ 
+	<package name="default" namespace="/" extends="struts-default">
+
+
+
+		<action name="locale" class="com.action.LocaleAction">
+			<result name="SUCCESS">/view/Login.jsp</result>
+		</action>
+		<action name="start" class="com.action.LocaleAction" method="start">
+			<result name="SUCCESS">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="login"  class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/dashBoard.jsp</result>
+			<result name="ACTIVATE">/view/activateCodeFwdPage.jsp</result>
+			<!--<result name="ACTIVATE">/view/activate.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action> 
+		
+		
+     <action name="homepage" method="loginaction"   class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/index.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+      <action name="home" method="homeDashBoard"   class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/dashBoard.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+	
+
+		<action name="activationCode" method="activationCode" class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/activateCode.jsp</result>
+		</action>
+
+		<action name="checkActivationCode" method="checkActivationCode"
+			class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/activateCodeSucessPage.jsp</result>
+			<result name="FAILURE">/view/activateCode.jsp</result>
+		</action>
+
+		<action name="activationCodeSucess" method="activationCodeSucess"
+			class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/addGodUserInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+			<result name="HACKING">/view/Hacking.jsp</result>
+		</action>
+
+		<action name="addGodUserInfo" method="addGodUserInfo" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/WelcomeLOMS.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="EulaDoc" method="EulaDoc" class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/EULA_Doc.jsp</result>
+		</action>
+		
+		<action name="openTroubleDoc" method="openTroubleDoc" class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/Troubleshoootingguide/o_04e31a625b715336.jsp</result>
+		</action>
+
+
+
+		<action name="fgtPwd" method="fgtPwd" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/forgetPassword.jsp</result>
+
+		</action>
+
+		<action name="getsecquestion" method="getsecquestion" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/forgetPassword.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+
+		</action>
+
+
+	    <action name="openFeedbackForm" method="openFeedbackForm" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/Feedback.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	    <action name="submitFeedFrm" method="submitFeedFrm" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/FeedbackSucess.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>	
+		
+		
+
+		<action name="sendpassmail" method="sendpassmail" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/forgetPassword.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+
+		</action>
+
+
+
+		<action name="clklogout" method="logOutAppln" class="com.action.LoginLoms">
+			<result name="SUCCESS">/view/Login.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<!-- Client Info Start Here -->
+		
+		 
+		
+		<action name="clientManagement" method="clientManagement" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/ClientPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		<action name="newregistration" method="newregistration" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/addClientMgmt.jsp</result>
+			<result name="input">/view/addClientMgmt.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addClientInfo" method="addClientInfo" class="com.action.ClientInfo">
+			<!-- <result name="SUCCESS">/view/ClientInfoPreview.jsp</result> -->
+			<result name="SUCCESS">/view/addClientMgmt.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="manageclient" method="mngClient" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/mngClientSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchresult" method="searchClient" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/mngClientSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchresult" method="searchClient" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/mngClientSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="viewClientInfo" method="viewClientInfo" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/viewClientDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="updClinetInfo" method="updateClinetInfo" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/ClientInfoEdit.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="updSaveClinetInfo" method="updateSaveClinetInfo"
+			class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/ClientInfoEdit.jsp</result>
+			<!-- <result name="SUCCESS">/view/ClientInfoEditSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="getCliFamInfo" method="getClientFamilyInfo"
+			class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/ClientFamilyInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addFamInfoView" method="addFamilyInfoView" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/AddFamilyInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="addFamInfoViewviaMenu" method="addFamilyInfoView"
+			class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/AddFamilyInfoMenu.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="addFamInfo" method="addFamilyInfo" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/AddFamilyInfo.jsp</result>
+			<!-- <result name="SUCCESS">/view/AddFamilyInfoSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addFamInfoMenu" method="addFamilyInfo" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/AddFamilyInfoMenu.jsp</result>
+			<!-- <result name="SUCCESS">/view/AddFamilyInfoSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="delFamInfoView" method="delFamInfoView" class="com.action.ClientInfo">
+			<result name="SUCCESS">/view/ClientFamilyInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+		<action name="downloadFile" method="downloadFile" class="com.action.ClientInfo"> 			
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+		<!-- Client Info Ends Here -->
+
+		<!-- Case Info Starts Here -->
+		
+		
+		 
+		<action name="caseManagement" method="caseManagement" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CasePageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchMailID" method="searchClientID" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MailID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchIndCaseID" method="searchIndCaseID" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/SearchCaseId.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchresultIndCaseId" method="searchresultIndCaseId"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/SearchCaseId.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="searchresultmailCase" method="searchresultClientCase"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MailID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="searchClientID" method="searchClientID" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/ClientID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="searchresultClientCase" method="searchresultClientCase"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/ClientID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="searchCaseID" method="searchCaseID" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CaseID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchCourtID" method="searchCourtID" class="com.action.CaseInfo">
+				<result name="SEARCH">/view/CourtID.jsp</result>
+			    <result name="ADD">/view/CourtNotAdd.jsp</result>
+			    <result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		<action name="addstdcrtinfoPop" method="addstdcrtinfoPop" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/AddCourtPop.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+     
+		
+		<action name="addstdcrtinfoDisSelPop" method="addstdcrtinfoPop"	class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/AddCourtPop.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		 <action name="addCourtInfoPopSave" method="addCourtInfoPopSave" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CourtID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		<action name="searchstdcourtinfo" method="searchstdcourtinfo"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CourtID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="newcase" method="newCaseInfo" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addCaseInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="addCaseInfoSave" method="addCaseInfoSave" class="com.action.CaseInfo">
+			<!-- <result name="SUCCESS">/view/addCaseInfoSucess.jsp</result> -->
+			<result name="SUCCESS">/view/addCaseInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="managecase" method="manageCaseinfo" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseInfoSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchCaseInforesult" method="searchCaseInforesult"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseInfoSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="delCaseInfo" method="delCaseInfo" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseInfoSearch.jsp</result> 
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="editCaseInfo" method="editCaseInfo" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CaseInfoEdit.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editCaseInfoSave" method="editCaseInfoSave"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/CaseInfoEdit.jsp</result>
+			<!-- <result name="SUCCESS">/view/CaseInfoEditSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="managecasedoc" method="mngCaseDocument" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseDocSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="downloadDoc" method="downloadDoc" class="com.action.CaseInfo">
+			<result name="SUCCESS" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="${caseDocName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="delDocument" method="delDocument" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseDocSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchdocresult" method="searchCaseDocresult"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/mngCaseDocSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		
+		<action name="addcasedoc" method="addCaseDocument" class="com.action.FileUploadAction">
+			<result name="SUCCESS">/view/addCaseDocument.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="uploadCaseDoc" method="uploadCaseDoc" class="com.action.FileUploadAction">		
+			<result name="SUCCESS">/view/addCaseDocument.jsp</result>
+			<result name="input">/view/addCaseDocument.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="addcasedocmenu" method="addCaseDocument" class="com.action.FileUploadAction">
+			<result name="SUCCESS">/view/addCaseDocumentmenu.jsp</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="uploadCaseDocmenu" method="uploadCaseDocMenu" class="com.action.FileUploadAction" > 
+			<result name="SUCCESS">/view/addCaseDocumentmenu.jsp</result>
+			<result name="input">/view/addCaseDocumentmenu.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result> 			
+		</action> 
+		
+		
+		
+				
+		<action name="addcaseHear" method="addcaseHear" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addCaseHearing.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action> 
+		
+		<action name="addCaseHearSave" method="addCaseHearSave" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addCaseHearing.jsp</result>
+			<!-- <result name="SUCCESS">/view/addCaseHearingSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addcaseHearviaMenu" method="addcaseHear" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addCaseHearingMenu.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addCaseHearSavemenu" method="addCaseHearSavemenu"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addCaseHearingMenu.jsp</result>
+			<!-- <result name="SUCCESS">/view/addCaseHearingSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchCaseHearing" method="searchCaseHearing"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MngCaseHearing.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="deleteCaseHearing" method="deleteCaseHearing"
+			class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MngCaseHearing.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editCaseHearing" method="editCaseHearing" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/EditCaseHearing.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editCaseHearSave" method="editCaseHearSave"
+			class="com.action.CaseInfo">
+			<!-- <result name="SUCCESS">/view/EditCaseHearingSucess.jsp</result> -->
+			<result name="SUCCESS">/view/EditCaseHearing.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewCaseInfo" method="viewCaseInfo" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/viewCaseDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchCaseOpp" method="searchCaseOpp" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MngOpponentSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addCaseOpp" method="addCaseOpp" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addOpponent.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="addCaseOppSave" method="addCaseOppSave" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/addOpponent.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editCaseopp" method="editCaseopp" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/editOpponent.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editCaseOppSave" method="editCaseOppSave" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/editOpponent.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="deleteCaseOpp" method="deleteCaseOpp" class="com.action.CaseInfo">
+			<result name="SUCCESS">/view/MngOpponentSearch.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="downloadCaseFile" method="downloadCaseFile" class="com.action.CaseInfo">			 
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	  <action name="downloadCaseHearingFile" method="downloadCaseHearingFile" class="com.action.CaseInfo">			 
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<!-- Case Info Ends Here -->
+
+		<!-- Employee Starts Here -->
+		 
+		
+		<action name="employeeManagement" method="employeeManagement" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/EmployeePageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		<action name="addnewemp" method="addNewEmployee" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/addEmployeeDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addEmployeeInfo" method="addEmpInfo" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/addEmployeeDetail.jsp</result>
+			<!-- <result name="SUCCESS">/view/addEmployeeSucess.jsp</result> -->
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="manageemp" method="manageEmployee" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/mngEmployee.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewEmpInfo" method="viewEmpInfo" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/ViewEmployeeInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+
+		<action name="delEmpDet" method="delEmpDet" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/mngEmployee.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editEmpDet" method="editEmpDet" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/EditEmployee.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editEmployeeInfo" method="editEmployeeInfo"
+			class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/EditEmployee.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="searchEmpInfoRes" method="searchEmpInfoResult"
+			class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/mngEmployee.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="chgPwd" method="chgPwd" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/ViewEmpPassChange.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	    <action name="chgSecQuestion" method="chgSecQuestion" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/editEmpSecurityQuestions.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		 <action name="updateSecQuestions" method="updateSecQuestions" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/editEmpSecurityQuestionsSucess.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	    <action name="chgEmailID" method="chgEmailID" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/editEmailID.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	   <action name="updateEmailID" method="updateEmailID" class="com.action.EmpInfo">
+			<result name="SUCCESS">/view/editEmailIDSucess.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+
+		<action name="updatePassword" method="updatePassword" class="com.action.EmpInfo">
+			<!--  <result name="SUCCESS">/view/ViewEmpPassChange.jsp</result> -->
+			<result name="SUCCESS">/view/Login.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editProductSet" method="editProductSet" class="com.action.LomsCommon">
+			<result name="SUCCESS">/view/ViewEditProductSet.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="updateProdSet" method="updateProdSet" class="com.action.LomsCommon">
+			<result name="SUCCESS">/view/ViewEditProductSet.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	
+
+
+
+
+
+		<!-- Employee Ends Here -->
+
+		<!-- Income/Expense Starts Here -->
+		
+		
+			
+		
+		<action name="incExpManagement" method="incExpManagement" class="com.action.IncomeExpence">
+			<result name="SUCCESS">/view/IncExpPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+
+		<action name="addIncExpDet" method="addIncomeExpDet" class="com.action.IncomeExpence">
+			<result name="SUCCESS">/view/addIncExpDet.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addIncExpDetSave" method="addIncExpDetSave"
+			class="com.action.IncomeExpence">
+			<!-- <result name="SUCCESS">/view/addIncExpDetSucess.jsp</result> -->
+			<result name="SUCCESS">/view/addIncExpDet.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="mngExpDetail" method="mngExpanceDetail" class="com.action.IncomeExpence">
+			<result name="SUCCESS">/view/SearchIncExp.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchManageinc" method="searchManageincomeDet"
+			class="com.action.IncomeExpence">
+			<result name="SUCCESS">/view/SearchIncExp.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="deleteIncExp" method="deleteIncExp" class="com.action.IncomeExpence">
+			<result name="SUCCESS">/view/SearchIncExp.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+	<action name="downloadIncxpFile" method="downloadIncxpFile" class="com.action.IncomeExpence">			 
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+
+		<!-- Income/Expens Ends Here -->
+
+		<!-- Quick Links Starts Here -->
+
+	<action name="quickLinksManagement" method="quickLinksManagement" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/QuickLinksPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="viewCase" method="viewCase" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCase.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="searchviewCase" method="searchviewCase" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCase.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+     <action name="downloadQuickFile" method="downloadQuickFile" class="com.action.QuickLinks">			 
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+		<action name="viewCaseHearInfo" method="viewCaseHearInfo"
+			class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCaseHear.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewSuits" method="viewSuits" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewSuits.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewAppeals" method="viewAppeals" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewAppeals.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewPetition" method="viewPetition" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewPetition.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="viewCrimCase" method="viewCrimCase" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCrimCase.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchCaseHearInfo" method="searchCaseHearInfo"
+			class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCaseHear.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchSuits" method="searchSuits" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewSuits.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchAppeals" method="searchAppeals" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewAppeals.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="searchPetition" method="searchPetition" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewPetition.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="searchCrimeCase" method="searchCrimeCase" class="com.action.QuickLinks">
+			<result name="SUCCESS">/view/viewCrimCase.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<!-- Quick Links Ends Here -->
+
+
+
+		<!-- Law Std Info Starts Here -->
+		
+		
+		
+	   <action name="lawStandardManagement" method="lawStandardManagement"	class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/lawStandardPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		<action name="viewstdcrtinfo" method="viewStdCourtInfo"	class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="searchstdcrtinfo" method="searchStdCourtinfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="viewCourtInfo" method="viewCourtInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewCourtDetails.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="viewstdcaseinfo" method="viewStdCaseInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCaseInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="mngCaseInfo" method="mngCaseInfo" class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCaseInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="addstdcrtinfo" method="addStdCrtInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/AddStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="stdCrtInfoState" method="addStdCrtInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/AddStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="addCourtInfoSave" method="addStdCrtInfoSave"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/AddStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="deleteCaseInfo" method="deleteCaseInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCaseInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="updStdCrtInfo" method="updStdCrtInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/editStdCourtInfoSucess.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<action name="editCourtInfoSave" method="editCourtInfoSave"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/editStdCourtInfoSucess.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="deleteCrtInfo" method="deleteCrtInfo"
+			class="com.action.LawStandardInfo">
+			<result name="SUCCESS">/view/viewStdCourtInfo.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<!-- Law Std Info Ends Here -->
+
+
+		<!-- Reminder Starts here -->
+
+
+
+ 
+	    <action name="reminderManagement" method="reminderManagement" class="com.action.Reminder">
+			<result name="SUCCESS">/view/ReminderPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		<action name="addreminder" method="addreminder" class="com.action.Reminder">
+			<result name="SUCCESS">/view/addReminder.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		 
+		
+		<action name="addremindersave" method="addremindersave" class="com.action.Reminder">
+			<result name="SUCCESS">/view/addReminder.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="viewreminder" method="viewreminder" class="com.action.Reminder">
+			<result name="SUCCESS">/view/ViewReminder.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<action name="delReminder" method="delReminder" class="com.action.Reminder">
+			<result name="SUCCESS">/view/ViewReminder.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		<!-- Reminders Ends here -->
+
+		<!-- Communication Starts here -->
+		
+		
+		
+	    <action name="communicationManagement" method="communicationManagement" class="com.action.Communication">
+			<result name="SUCCESS">/view/CommunicationPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="sendSMSView" method="sendSMSView" class="com.action.Communication">
+			<result name="SUCCESS">/view/sendSMS.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="sendSMS" method="sendSMS" class="com.action.Communication">
+			<result name="SUCCESS">/view/sendSMS.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="SendEmailView" method="SendEmailView" class="com.action.Communication">
+			<result name="SUCCESS">/view/sendEmail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="SendEmail" method="SendEmail" class="com.action.Communication">
+			<result name="SUCCESS">/view/sendEmail.jsp</result>
+			<result name="input">/view/sendEmail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="serviceRequest" method="serviceRequest" class="com.action.Communication">
+			<result name="SUCCESS">/view/sendServiceEmail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="SendServiceEmail" method="SendServiceEmail"
+			class="com.action.Communication">
+			
+             <interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			
+			<result name="SUCCESS">/view/sendServiceEmail.jsp</result>
+			<result name="input">/view/sendServiceEmail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<!-- Communication Ends here -->
+
+		<!-- Judgments menu Started here -->
+
+
+
+        <action name="judgmentManagement" method="judgmentManagement"	class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/judgmentPageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+
+
+		<action name="searchJudgments" method="searchJudgments"	class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/searchJudgments.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+        <action name="searchBareActsRules" method="searchBareActsRules"	class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/searchBareActsRules.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		
+      <action name="downBareActsTemplate" method="downBareActsTemplate"
+			class="com.action.SearchJudgments">
+			<!--  <result name="SUCCESS">/view/searchJudgments.jsp</result>-->
+			
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${bareActsRulesName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+	    <action name="searchdownBareRules" method="searchdownBareRules"	class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/searchBareActsRules.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+		
+        <action name="selHightCourt" method="selHightCourt"
+			class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/searchJudgments.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+		<action name="searchJudgmentResults" method="searchJudgmentResults"
+			class="com.action.SearchJudgments">
+			<result name="SUCCESS">/view/searchJudgments.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+ 
+		<action name="downloadJudgDoc" method="downloadJudgDoc"
+			class="com.action.SearchJudgments">
+			<!--  <result name="SUCCESS">/view/searchJudgments.jsp</result>-->
+			
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${judgmentDocName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+		<!-- Judgments menu Ends here -->
+
+		<!-- Template menu starts here -->
+		
+		
+		
+		<action name="templateManagement" method="templateManagement" class="com.action.Template">
+			<result name="SUCCESS">/view/templatePageLinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		<action name="caseFillingTemplateDownload" method="caseFillingTemplateDownload" class="com.action.Template">
+			<result name="SUCCESS">/view/CodingCaseTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+	   <action name="searchTemplate" method="searchTemplate" class="com.action.Template">
+			<result name="SUCCESS">/view/CodingCaseTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+        <action name="seleLanguageTemp" method="seleLanguageTemp" class="com.action.Template">
+			<result name="SUCCESS">/view/CodingCaseTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+        <action name="downTemplate" method="downTemplate" class="com.action.Template">
+			<!-- <result name="SUCCESS">/view/CodingCaseTempDownload.jsp</result> -->				
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${templateDocumentName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+				
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+	 
+	 
+	 
+ 		<action name="formTemplateDownload" method="formTemplateDownload" class="com.action.Template">
+			<result name="SUCCESS">/view/FormsTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+        <action name="seleFormLoc" method="seleFormLoc" class="com.action.Template">
+			<result name="SUCCESS">/view/FormsTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action> 
+		
+	   <action name="formsSearch" method="formsSearch" class="com.action.Template">
+			<result name="SUCCESS">/view/FormsTempDownload.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		
+       <action name="downFormTemplate" method="downFormTemplate" class="com.action.Template"> 			
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${templateFormsName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+		
+		<!-- Template menu endes here -->
+		<!-- Book Shelf menu Started here -->
+		
+		
+		
+		<action name="bookManagement" method="bookManagement" class="com.action.Books">
+			<result name="SUCCESS">/view/BookPageinks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addNewBook" method="addNewBook" class="com.action.Books">
+			<result name="SUCCESS">/view/addBook.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="addBookSave" method="addBookSave" class="com.action.Books">
+			<result name="SUCCESS">/view/addBook.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="manageBooks" method="manageBooks" class="com.action.Books">
+			<result name="SUCCESS">/view/searchBooks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="searchBooks" method="searchBooks" class="com.action.Books">
+			<result name="SUCCESS">/view/searchBooks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="modBookDetail" method="modBookDetail" class="com.action.Books">
+			<result name="SUCCESS">/view/modBookDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="editBookSave" method="editBookSave" class="com.action.Books">
+			<result name="SUCCESS">/view/modBookDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+		<action name="delBook" method="delBook" class="com.action.Books">
+			<result name="SUCCESS">/view/searchBooks.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="viewBookInfo" method="viewBookInfo" class="com.action.Books">
+			<result name="SUCCESS">/view/viewBooksDetail.jsp</result>
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+		<action name="downloadBookDetailsFile" method="downloadBookDetailsFile" class="com.action.Books"> 			
+			<result name="SUCCESS" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">fileInputStream</param>
+			  <param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+			  <param name="bufferSize">1024</param>
+			</result>			
+			<result name="FAILURE">/view/Login.jsp</result>
+		</action>
+
+
+
+
+		<!-- Book Shelf menu Ends here -->
+
+
+
+
+	</package>
+</struts>

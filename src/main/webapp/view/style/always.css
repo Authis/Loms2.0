@@ -1,0 +1,82 @@
+/* link underlines tend to make hypertext less readable, 
+   because underlines obscure the shapes of the lower halves of words
+---------------------------------------------*/
+:link,:visited { text-decoration:none; }
+
+/* no list-markers by default, since lists are used more often for semantics
+---------------------------------------------*/
+ul,ol { list-style:none; }
+
+/* avoid browser default inconsistent heading font-sizes */
+/* and pre/code too
+---------------------------------------------*/
+h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+
+/* remove the inconsistent (among browsers) default ul,ol padding or margin  */
+/* the default spacing on headings does not match nor align with 
+   normal interline spacing at all, so let's get rid of it. */
+/* zero out the spacing around pre, form, body, html, p, blockquote as well */
+/* form elements are oddly inconsistent, and not quite CSS emulatable. */
+/*  nonetheless strip their margin and padding as well
+---------------------------------------------*/
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input
+{ margin:0; padding:0 }
+
+/* No blue linked images borders
+---------------------------------------------*/
+img { border:none; }
+a img,:link img,:visited img { border:none; }
+
+/* De-italicize adress
+---------------------------------------------*/
+address { font-style:normal; }
+
+/* Do not show hr's
+---------------------------------------------*/
+/*hr { display:none; }*/
+hr {color:#C4D7E6; height:1px; background-color:#C4D7E6;}
+
+/* Show 'help' cursor
+---------------------------------------------*/
+abbr, acronym, ins, del, kbd, var, cite { cursor:help; }
+
+/* Forms (default markup)
+---------------------------------------------*/
+label, select,
+input[type=checkbox],
+input[type=radio],
+input[type=button],
+input[type=submit] {
+	cursor: pointer;
+	}
+
+textarea, input {
+	border: 1px solid #ccc;
+	font-size:0.92em;
+	padding:1px;	
+	}
+
+
+input:focus, textarea:focus {
+	background: #fff2ea;
+	color: #006;
+	}	
+
+/* Clear Floats Without Structural Markup
+(works in IE7) 
+---------------------------------------------*/
+.clearfix:after {
+    content:"."; 
+    display:block; 
+    height:0; 
+    clear:both; 
+    visibility:hidden;
+	}
+
+.clearfix { display:inline-block; }
+
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */
+* html .clearfix {height: 1%;}/* CSS Document */
+

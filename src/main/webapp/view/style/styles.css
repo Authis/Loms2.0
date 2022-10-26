@@ -1,0 +1,543 @@
+/*
+______________________________________________________________________________________________
+
+		Author:   Subhan (Vayana India pvt.ltd)
+		Date:     DEC 06 2010
+		Description: UI- Banking application, Web Layout.	______________________________________________________________________________________________
+
+*/
+
+/* Micox Pseudo-class-css2 to IE (MXPC). Activate .hover and .first-child in IE 6 */
+/* * html *  { color: expression( (function(who){ if(!who.MXPC){
+	 who.MXPC = '1';
+	 if(who.nodeName != 'A'){
+  	who.onmouseenter=function(){ who.className += ' hover'};
+  	who.onmouseleave=function(){ who.className = who.className.replace(' hover','')}; }
+ 	(who==who.parentNode.firstChild) ? who.className += ' first-child' : '' ;
+	} } )(this) , 'auto') }
+
+ CAUTION: Do not delete this commented tags, ie browser will parse this tag in commented state	
+*/
+
+
+/* Common---------------------------------------------*/
+
+body {
+	background:#fff;
+	color:#006;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	margin:0 auto;
+	padding:0px;
+	margin-top:0px;
+	/*min-width:730px; /* min- and max-width don't work in IE Win 6 and below */
+	
+	}
+	
+a { color:#006; outline:none}
+a:hover { text-decoration:underline; }
+
+
+/* Page Structure (layout)
+---------------------------------------------*/
+
+#pagewrapper {
+	margin:0px auto;
+	width:98%;
+	padding-left:10px;
+	padding-right:10px;
+	/*background:#fff url(../img/wraper_bg.png) no-repeat right top;
+	border-top:solid 5px #00467d;*/
+	position:relative;
+	display:block;
+	
+	}
+#body_wrap{
+	position:relative; 
+	/*background-color:#00467d; */
+	background-color:#f8f8f8;
+	display:inline-block; 
+	width:99.5%; 
+	padding-left:8px;
+
+}
+ #lhs_nav /*, #middle */{
+	overflow:hidden;
+	display:inline-block;
+	}
+#topbar, #footer {
+	width:100%;
+	}
+#topbar {
+	background:#fff url(../img/top-bg.gif) right repeat-y;
+	margin:0px 0px 0px 0px;/* minus 15px fix only for mozilla, chrome*/
+	display:block;
+	}
+#lhs_nav {
+	float:left; /* min-width doesn't work in IE Win 6 and below */
+	width:2%;
+	/*margin-right: 2px;*/
+	margin-left: 0px;
+	margin-top: 4px;
+	margin-bottom: 0px;
+	background-color: #fff;
+	padding-bottom: 0px;
+	display: inline-block;
+	position:relative;
+	}
+
+#middle{
+	float:right;
+	margin:0 0 0 0px;
+	padding:4px 4px 4px 0px;
+	margin-bottom:5px;
+	position:relative;
+	}
+#footer {
+	border-top:1px solid #CCC;
+	padding-bottom:10px;
+	padding-top: 3px;
+	
+	}
+#maximizer{
+	width:18px;
+	background:url(../img/maxmizer.gif) no-repeat;
+	height:138px;
+	display:inline-block;
+	/*z-index:9999;*/
+	}
+
+/* Topbar - bottom
+---------------------------------------------*/
+
+#title_logo {
+	margin:0px 0 0 0;
+	width:100%;
+	
+	}
+#title_logo h1 a { /*Logo */
+	background:transparent url(../img/logo.png) left top no-repeat;
+	float:left;
+	height:20px;
+	margin-top:0px;
+	overflow:hidden;
+	padding:40px 0 0 0; /* height of logo image */
+	text-indent:-9000px;
+	width:300px;
+	}
+*:first-child+html #title_logo h1 a{margin-top:-15px;}/* hack for ie6*/
+#title_logo h1 a:hover { text-decoration: none; }
+#title_logo h2 { /* Business Descriptor */
+	float:right;
+	font-size:1.6em;
+	font-weight:normal;
+	padding-top:10px;
+	padding-right:10px;
+	color:#2e73b5;
+	clear :right;
+	}
+
+/* Topbar - top
+---------------------------------------------*/
+#function_switches {float:right; }
+#function_switches li {	float:left;  }
+#function_switches li a {
+	background:transparent url(../img/blue_piper.gif) right 3px no-repeat;
+	color:#fff;
+	font-size:0.92em;
+	margin-right:8px;
+	padding-right:8px;
+	}
+#function_switches li.last a {
+	background:none;
+	margin-right:8px;
+	padding-right:0;
+	}
+#lang_switch li { float: left; }
+#lang_switch li a {
+	background:transparent url(../img/orange_piper.gif) right 3px no-repeat;
+	color:#666;
+	font-size:0.92em;
+	margin-right:8px;
+	padding-right:9px;
+	text-transform:uppercase;
+	}
+#lang_switch li.last a { background:none; }
+#lang_switch li.selected a { color:#F60; }
+#lang_switch li.selected a:hover { text-decoration:none; }
+	
+/* Horizontal navigation
+---------------------------------------------*/
+#horz_nav {
+	width:100%;
+	display:block;
+	line-height:normal;
+	border-bottom:3px solid #f47b20;	
+	}
+#horz_nav ul {
+	float:left;
+    margin:0;
+    padding:2px 0px 0 0px;
+    list-style:none;
+	}
+* html #horz_nav, * html #horz_nav ul {/*hack for ie6*/
+	height: 2em;
+	overflow: visible;
+	}
+#horz_nav li {	
+	 display:inline;
+      margin:0;
+      padding:0;
+      }
+#horz_nav li a {
+      float:left;
+      background:url("../img/tableft1.gif") no-repeat left top;
+      margin:0;
+      padding:0 0px 0 14px;
+	  text-decoration:none;
+      }
+#horz_nav li a:hover {
+      background-position:0% -43px;
+      }
+#horz_nav li a span {
+	float:left;
+	cursor:pointer;
+	background:url("../img/tabright1.gif") no-repeat right top;
+    padding:5px 15px 4px 6px;
+    color:#fff;
+	font-weight: bold;
+	font-family:arial;
+	line-height:1.4em;
+	font-size:13px;
+      }
+#horz_nav li a:hover span {
+ 		background:url("../img/tabright1.gif") no-repeat;
+      background-position:100% -42px  ;
+   }
+#horz_nav li.selected a {
+    background-position:0% -43px;
+	/*padding-top: 0.05em;*/
+      }
+#horz_nav li.selected a span {
+    background-position:100% -42px;
+	color:#fff; 
+    }
+#horz_nav .user_info{
+	float:right;
+	color:#769bcb;
+	font-size: 11px;
+}
+#horz_nav li.quick{
+ 	float:right;
+	position:relative;
+}
+
+.dropdown-menu {
+    width:110px;
+    position:absolute;
+    color:#FFF;
+    cursor:pointer;
+    z-index:1;
+	top:65px;
+	right:8px;
+	display:block;
+	margin-right:4px;
+}
+.dropdown-menu a:link, .dropdown-menu a:visited {
+    color:#FFF !important;
+    display:block !important;
+    text-decoration:none !important; 
+    margin:0 !important;
+}
+/*.dropdown-menu a:hover {
+    color:#FFF !important;
+    text-decoration:underline !important;
+}
+*/
+.dropdown-menu .slide-down {
+  /*  background-color:#fff000;*/}
+
+.menu-first {
+    background:url("../img/tableft1.gif") no-repeat left top;
+    line-height:15px;
+	display:block;
+	padding-left:14px;
+   
+}
+.menu-first span{
+    background:url("../img/tabright1.gif") no-repeat right top;
+    line-height:15px;
+    padding:3px 0px 4px 0px;
+	white-space:nowrap;
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	text-align:center;
+	
+}
+.down-list {
+    margin-left:1px;
+	display:none;
+	border:solid 1px #ccc;
+}
+.down-list li a{
+	background-color:#00467d;
+    padding:5px 5px 5px 5px;
+	border-bottom:solid 1px #E7EFF5;
+ }
+ .down-list li a:hover{
+    background-color:#FFFFFF;
+	color:#333 !important;
+	border:solid 2px #c1c4c0;
+	border-bottom:none;
+ }
+.down-list li.lastLI a{/* background:#670100; padding-bottom:2px; */ border-bottom:none !important;}
+/* LHS_menu
+---------------------------------------------*/
+.glossymenu{
+	padding: 0;
+	width: 100%; /*width of menu*/
+	overflow: hidden;
+}
+
+.glossymenu a.menuitem{
+	background-color:#cce0fb;
+	font-size: 12px;
+	font-weight:bold;
+	color:#00467d;
+	display: block;
+	position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+	width: auto;
+	padding: 6px 0;
+	padding-left: 10px;
+	text-decoration: none;
+	border-bottom:solid 1px #fff;
+}
+
+
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: #00467d;
+}
+
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: absolute;
+top: 5px;
+right: 5px;
+border: none;
+}
+
+.glossymenu a.menuitem:hover{
+background-image:url(../img/glossyback.gif);
+color:#fff;
+}
+
+
+.highlt{
+background-image:url(../img/glossyback.gif);
+color:#fff !important;
+}
+
+
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: white;
+}
+
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.glossymenu div.submenu ul li{
+border-bottom: 1px dotted #c1c4c0;
+}
+
+.glossymenu div.submenu ul li a{
+	display: block;
+	font-size:12px;
+	color: black;
+	text-decoration: none;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 0;
+	padding-bottom: 5px;
+}
+
+.glossymenu div.submenu ul li a:hover,.glossymenu div.submenu ul li a:focus{
+background-color: #f47b20;
+color: #fff;
+}
+
+
+/* Module: RHS Jumpboxes
+---------------------------------------------*/
+#content div.rhs_jumpbox {
+	background-color: #EFF4FA;
+	width: 175px;
+}
+
+#content div.rhs_jumpbox span { /* Headerbar */
+	background-color: #B4C3E1;
+	color: #006;
+	display: block;
+	font-weight: bold;
+	padding: 5px 10px 6px 11px;
+}
+
+#content div.rhs_jumpbox ul {
+	list-style: none;
+	margin-top: 6px;
+	padding-bottom: 10px;
+}
+
+#content div.rhs_jumpbox ul li {
+	background: url(../img/arrow.gif) 11px 5px no-repeat;
+	line-height: 1em;
+	margin-top: 3px;
+	padding-left: 27px;
+	padding-right: 10px;
+}
+
+#content div.rhs_jumpbox ul li a {
+	color: #39C;
+	font-size: 0.83em;
+	text-decoration: underline;
+}
+
+#content div.rhs_jumpbox ul li a:link, #content div.rhs_jumpbox ul li a:hover, #content div.rhs_jumpbox ul li a:active, #content div.rhs_jumpbox ul li a:visited { text-decoration: underline; color: #39C; }
+
+/* Footer
+---------------------------------------------*/
+
+#footer_links li { float:left; }
+#footer_links li a {
+	background:transparent url(../img/blue_piper.gif) right 3px no-repeat;
+	color:#39C;
+	font-size:0.92em;
+	height:0.92em;
+	margin-right:7px;
+	padding-right:7px;
+	}
+#footer_links li.last a {
+	background:none;
+	padding-right:0;
+	}
+#footer_links li.last { margin-right:49px; }
+#copyright {
+	color: #999;
+	float:right;
+	font-size:0.92em;
+	padding-top: 1px;
+	}
+/* menu-------------------------------------------*/
+
+/* login info -----------------------------*/
+
+#info
+{
+	color:#666;
+	font-size:0.92em;
+	/*padding-left:5px;
+	padding-right:5px;*/
+	padding-top:4px;
+	padding-bottom:10px;
+	background-color:#ffdb94;
+	width:100%;
+	position:relative;
+	
+}
+#info .user{ float:left;  display:inline-block; margin-left:10px;}
+#info .loginfo{ float:right;  margin-right:60px;display:inline-block; }
+ 
+.info_tgle a{
+	display:block;
+	float:right;
+	position:absolute;
+	bottom:0px;
+	right:0px;
+	}
+#info .moreinfo{
+	display:none; width:100%; background-color:#ffdb94;
+}
+#info .moreinfo hr{
+	clear:both;
+	color:#f47b20 !important;
+	}
+/* popup 
+----------------------------------------------------*/
+br.both{
+clear:both;
+}
+#backgroundPopup{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:100%;
+width:100%;
+top:0;
+left:0;
+background:#000000;
+border:1px solid #cecece;
+z-index:1;
+}
+#popupContact{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:80%;
+width:80%;
+background:#fff;
+border:1px solid #000066;
+z-index:2;
+/*padding:12px;*/
+/*font-size:11px;*/
+overflow-y:auto;
+overflow-x:hidden;
+margin:0px auto;
+}
+
+#popupContact h1{
+text-align:left;
+color:#fff;
+font-size:18px;
+font-weight:700;
+padding-bottom:2px;
+float:left;
+display:inline-block;
+margin-left:10px;
+font-style:italic;
+}
+#popupContactClose{
+font-size:12px;
+font-weight:bold;
+color:#fff;
+display:inline-block;
+float:right;
+cursor: pointer;
+text-decoration:none;
+padding:0px 4px 1px 4px;
+border:solid 1px #fff;
+margin-right:20px;
+margin-top:3px;
+background-color:#6c92c1;
+}
+#popupbar{
+display:inline-block;
+width:100%;
+background:#7fa5d6  url(../img/tbl_hdr_bg.jpg) repeat-x;
+z-index:99999;
+padding:3px 0 3px 0;
+position:fixed;
+_position:absolute;/*fix for IE6*/
+top:0px;
+left:0px;
+}
+#popupbar .printer{
+float:right;
+margin-right:20px;
+display:inline-block;
+height:20px;
+width:20px;
+background:url(../img/print.gif) no-repeat  center center;
+text-indent:-9999px;
+}

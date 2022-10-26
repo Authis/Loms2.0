@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<form-validation>
+
+    <global>
+
+
+    </global>
+
+<formset>
+	  <form name="changepasswordinputform">
+		
+
+	 <field property="oldpw"
+                   depends="minlength,maxlength,required">
+                <arg0   key="change.userid.required"/>
+                <arg1   key="${var:minlength}" name="minlength"
+                   resource="false"/>
+                <arg2   key="${var:maxlength}" name="maxlength"
+                   resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>8</var-value>
+                </var>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+            </field>
+
+
+
+
+
+	     <field
+		 property="newpw"
+		 depends="required">
+		 <msg key="NEWPW.invalid" name="required"/>
+	       </field>
+	     <field
+		 property="confirmpw"
+		 depends="required">
+		 <msg key="CONFIRMPW.invalid" name="required"/>
+		 </field>
+	 </form>
+
+
+
+
+			 <form name="changeaddressform">
+			     <field
+				   property="address1"
+				   depends="required">
+				 <msg key="address1.required" name="required"/>
+			     </field>
+			     <field
+				   property="address2"
+				   depends="required">
+				 <msg key="address1.required" name="required"/>
+			     </field>
+			     <field
+				   property="address3"
+				   depends="required">
+				 <msg key="address1.required" name="required"/>
+			     </field>
+			     <field
+				   property="address4"
+				   depends="required">
+				 <msg key="address1.required" name="required"/>
+			     </field>
+		  </form>
+
+
+
+
+
+		<form name="sssimsimpaymentinputform">
+				<field	
+					    property="txtwaselnum"
+					   depends="required,integer">
+					 <msg key="mobilenum.requierd" name="required"/>
+					 <msg key="mobilenum.integer" name="integer"/>
+				</field>
+				<field	
+					    property="txtpaycharge"
+					   depends="required,integer">
+					 <msg key="ammount.requierd" name="required"/>
+					 <msg key="ammount.integer" name="integer"/>
+				</field>
+	
+
+		 </form>
+
+
+
+			<form name="smsregistrationinputform">
+				<field	
+					    property="smsemail1"
+					   depends="required,email">
+					 <msg key="smsemail1.requierd" name="required"/>
+					 <msg key="smsemail1.emailform" name="email"/>
+				</field>
+				<field	
+					    property="smsmobileno1"
+					    depends="minlength,maxlength,required">
+					  
+					<arg0   key="kkkk" />
+					<arg1   key="${var:minlength}" name="minlength"
+					   resource="false"/>
+					<arg2   key="${var:maxlength}" name="maxlength"
+					   resource="false"/>
+					<var>
+					    <var-name>maxlength</var-name>
+					    <var-value>5</var-value>
+					</var>
+					<var>
+					    <var-name>minlength</var-name>
+					    <var-value>1</var-value>
+					</var>
+
+
+				</field>
+	
+
+		 </form>
+
+		<form name="pushregistrationinputform">
+				<field	
+					    property="actlowerlimit"
+					   depends="required,integer">
+					 <msg key="smspushlowerreq.requierd" name="required"/>
+					 <msg key="smsepushlowerint.integer" name="integer"/>
+				</field>
+				<field	
+					    property="actupperlimit"
+					   depends="required,integer">
+						 <msg key="smspushupperreq.requierd" name="required"/>
+						 <msg key="smspushupperint.integer" name="integer"/>
+				</field>
+	
+
+		 </form>
+
+		<form name="webtosmsinputform">
+				<field	
+					    property="smsmobileno1"
+					   depends="required,integer">
+					 <msg key="webtosmsreq.requierd" name="required"/>
+					 <msg key="webtosmsint.integer" name="integer"/>
+				</field>
+			
+
+		 </form>
+
+
+		<form name="chequebookrequestinputform">
+				<field	
+					    property="fromact"
+					   depends="required">
+					 <msg key="chequefromactreq.required" name="required"/>
+					 
+				</field>
+			
+				<field	
+					    property="design"
+					   depends="required">
+					 <msg key="chequedesing.requierd" name="required"/>
+					 
+				</field>
+				
+
+		 </form>
+
+
+
+
+
+
+
+			<form name="pre-setinstructionform">
+			
+				<field	   property="txtamount"   depends="required,integer" >
+					 <arg0 key="messuuuu" name="required"/>
+	       			</field>
+								
+
+			 </form>
+
+
+
+	
+			<form name="utilitypaymentform">
+			
+				<field	   property="txtpayeeamount"   depends="required,integer" >
+					 <arg0 key="ooooooo" name="required"/>
+					  	    				 
+	       			</field>
+						
+			 </form>standingorderform
+
+payfreq
+			 <form name="standingorderform">
+			
+				<field	   property="payamount"   depends="required,integer" >
+					 <arg0 key="kkkhhhhhhh" name="required"/>
+					  	    				 
+	       			</field>
+				
+				<field	   property="numberofpayments"   depends="required,integer" >
+					 <arg0 key="kkkhhhhhhh" name="required"/>
+					  	    				 
+	       			</field>
+					  
+				<field	   property="payfreq"   depends="required,integer,minlength,maxlength" >
+					 <arg0 key="kkkhhhhhhh" name="required"/>
+					 <arg1   key="${var:minlength}" name="minlength"
+						   resource="false"/>
+						<arg2   key="${var:maxlength}" name="maxlength"
+						   resource="false"/>
+						<var>
+						    <var-name>maxlength</var-name>
+						    <var-value>4</var-value>
+						</var>
+						<var>
+						    <var-name>minlength</var-name>
+						    <var-value>2</var-value>
+						</var>
+									 
+					</field>
+						
+			 </form>
+
+
+
+		<form name="ccpaymentinputform">
+		<field	property="txttramt"
+			depends="minlength,maxlength,required">
+			<arg0   key="AMOUNT" />
+			<arg1   key="${var:minlength}" name="minlength"
+				   resource="false"/>
+			<arg2   key="${var:maxlength}" name="maxlength"
+					   resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>1</var-value>
+				</var>
+		</field>
+	</form>
+
+	<form name="utilitypaymentinputform">
+		<field	property="txttramt"
+			    depends="minlength,maxlength,required">
+			<arg0   key="AMOUNT" />
+			<arg1   key="${var:minlength}" name="minlength"
+				   resource="false"/>
+			<arg2   key="${var:maxlength}" name="maxlength"
+					   resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>1</var-value>
+				</var>
+		</field>
+	</form>
+
+	<form name="simsimpaymentinputform">
+		<field	property="txtwaselnum"
+			    depends="minlength,maxlength,required">
+			<arg0   key="kkkk" />
+			<arg1   key="${var:minlength}" name="minlength"
+				   resource="false"/>
+			<arg2   key="${var:maxlength}" name="maxlength"
+					   resource="false"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>1</var-value>
+				</var>
+		</field>
+	</form>
+
+<!-- Rajesh Message module validation -->
+	<form name="messagecomposeform">
+	    <field	property="txtIdFrom"	depends="required">
+			<msg key="txtIdFrom.required" name="required"/>
+		</field>
+		<field	property="txtIdTo"		depends="required">
+			<msg key="txtIdTo.required" name="required"/>
+		</field>
+		<field  property="txtSubject"   depends="required">
+			 <msg key="txtSubject.required" name="required"/>
+	     </field>
+	     <field	property="taMessage"	depends="required">
+			 <msg key="taMessage.required" name="required"/>
+	     </field>
+	 </form>
+
+<!-- Rajesh fund transfer module validation -->
+
+
+
+	<form name="fundtransferform">
+		<field	property="acctfrom" depends="required">
+			<msg key="fromaccount.required" name="required"/>
+		</field>
+
+		<field	property="acctto"	depends="required">
+			<msg key="toaccount.required" name="required"/>
+		</field>
+		
+		<field	property="txttransferamt" depends="required,integer">
+			<msg key="transferamount.required" name="required"/>
+			<msg key="transferamount.integer" name="integer"/>
+		</field>
+
+		<field	property="txtfromcurrency"	depends="required,integer">
+			<msg key="fromcurrency.required" name="required"/>
+			<msg key="fromcurrency.integer" name="integer"/>
+		</field>
+
+		<field	property="txttocurrency"	depends="required,integer">
+			<msg key="tocurrency.required" name="required"/>
+			<msg key="tocurrency.integer" name="integer"/>
+		</field>
+
+	</form>		
+
+
+
+
+
+
+
+		
+
+
+
+
+</formset>
+
+
+</form-validation>

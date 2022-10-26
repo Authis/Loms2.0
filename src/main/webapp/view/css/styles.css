@@ -1,0 +1,132 @@
+/* CSS Document */
+* {margin:0 auto; padding:0;}
+.clear {clear:both; margin:0; padding:0;}
+a{text-decoration:none}
+a:hover {text-decoration:underline;}
+li a:hover {text-decoration:none;}
+li {list-style:none;}
+#content {margin:0 40px;}
+p {margin:0; padding:2px; text-align:justify; color:#414141}
+p.add, .add a{float:right; color:#5480a9; float:right}
+span.star {color:#FF0000; padding:0 10px;}
+h2 {font-size:20px; font-weight:bold; color:#507399; border-bottom:#507399 1px solid; padding-bottom:5px;}
+.boxheading {font-size:16px; font-weight:bold; color:#363636; padding-bottom:5px; float:left}
+span.readmore a{padding:0px 10px; color:#0088cc;}
+
+
+body {font-family:Arial, Helvetica, sans-serif; font-size:12px; background:url(/loms/view//loms/view/images/bg.jpg);}
+
+#login-cont {padding:10px; background:#fff; width:800px; height:300px; margin:30px auto 0px; border:#3F3F3F 1px solid;}
+#login-cont .left {width:45%; padding:10px; float:left; border-right:#31637D 1px solid; margin:0 auto;}
+#login-cont .left p {font-size:14px; font-family:"Times New Roman", Times, serif;}
+#login-cont .right {width:45%; padding:10px; float:right; margin:0 auto;}
+#login-cont .right p {font-size:18px;  color:#454545; line-height:24px;}
+
+#login-cont .right ul {margin:10px auto;}
+#login-cont .right ul li:first-child{border-left: #000000 0px solid;}
+#login-cont .right ul li{float:left; padding:3px 15px; color:#292929; border-left: #000000 1px solid;}
+#login-cont .right ul li a{color:#000; }
+
+#login-cont .right .sub_link {margin-bottom:20px;}
+
+form#login_form { float:right; margin:40px 40px 0px 0px;}
+p.heading { font-size:20px; font-weight:bold; color:#507399; padding-bottom:5px; border-bottom:#507399 2px solid; margin-bottom:10px;}
+input {width:3250px; padding:10px; border:#E2E2E2 1px solid; margin:3px 0px 15px;; color:#333333}
+input.submit { width:auto; padding:5px 15px; font-weight:bold; background:#52759b; color:#FFFFFF; float:right; cursor:pointer; }
+input.submit:hover { background:#0088cc}
+p.forget_password a{color:#0088cc; float:left; padding:8px 0px}
+p.forget_password a:hover {text-decoration:underline;}
+
+#top {height:80px; background:#17385e;}
+.logo {background:url(/loms/view/images/logo.jpg) center center no-repeat; width:200px; height:80px; float:left}
+.User {float:right;}
+
+
+#main_cont {margin-bottom:20px;}
+
+.right_content {width:98%}
+
+.box {background:#E8E8E8; border:#BCBCBC 1px solid; padding:15px; margin-bottom:10px;}
+.box p {margin:3px 0px;}
+
+table#casehearing_table {background:#9d9d9d}
+.row_heading {background:#416389; color:#FFFFFF; height:35px; font-weight:bold;}
+.even_row {background:#E6E6E6; height:25px;}
+.odd_row {background:#DBDBDB; height:25px;}
+
+
+.control-group {width:45%; padding:5px 20px; float:left}
+.controls {width:70%}
+.controls .inputbox, select  {padding:5px 8px; line-height:24px; border:#BCBCBC 1px solid; margin:3px 0px; color:#6e6e6e}
+.controls textarea {padding:5px 8px; line-height:24px; border:#BCBCBC 1px solid; margin:3px 0px; color:#6e6e6e; height:50px; resize:vertical; width:250px; }
+.control-group label {width:28%; float:left; margin-top:5px}
+.control-group .controls {float:left;}
+
+.submit{ width:auto; padding:5px 10px; background:#52759b; color:#FFFFFF; cursor:pointer; margin:0 30px; float:none !important; }
+.submit:hover { background:#0088cc}
+
+/*-----------Master Menu------*/
+#master_menu {width:90%; background:#fff; border:#a0a0a0 solid 1px; padding:10px ; overflow:hidden; margin:0 auto}
+
+.dashboard {background:url(/loms/view/images/icons.jpg) -1px -1710px no-repeat; width:150px; height:150px; float:left; margin:10px 20px;cursor:pointer;}
+.dashboard:hover {background:url(/loms/view/images/icons.jpg) -154px -1710px no-repeat; width:150px; height:150px; }
+
+.client_management {background:url(/loms/view/images/icons.jpg) -1px -1px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.client_management:hover {background:url(/loms/view/images/icons.jpg) -154px -1px no-repeat; width:150px; height:150px; }
+
+.case_management {background:url(/loms/view/images/icons.jpg) -1px -156px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.case_management:hover {background:url(/loms/view/images/icons.jpg) -154px -156px no-repeat; width:150px; height:150px; }
+
+.employee_management {background:url(/loms/view/images/icons.jpg) -1px -311px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.employee_management:hover {background:url(/loms/view/images/icons.jpg) -154px -311px no-repeat; width:150px; height:150px; }
+
+.income_expense_management {background:url(/loms/view/images/icons.jpg) -1px -466px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.income_expense_management:hover {background:url(/loms/view/images/icons.jpg) -154px -466px no-repeat; width:150px; height:150px; }
+
+.quick_link {background:url(/loms/view/images/icons.jpg) -1px -622px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.quick_link:hover {background:url(/loms/view/images/icons.jpg) -154px -622px no-repeat; width:150px; height:150px; }
+
+.law_standared_info {background:url(/loms/view/images/icons.jpg) -1px -778px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.law_standared_info:hover {background:url(/loms/view/images/icons.jpg) -154px -778px no-repeat; width:150px; height:150px; }
+
+.reminders {background:url(/loms/view/images/icons.jpg) -1px -934px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.reminders:hover {background:url(/loms/view/images/icons.jpg) -154px -934px no-repeat; width:150px; height:150px; }
+
+.communication {background:url(/loms/view/images/icons.jpg) -1px -1090px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.communication:hover {background:url(/loms/view/images/icons.jpg) -154px -1090px no-repeat; width:150px; height:150px; }
+
+.case_judgment {background:url(/loms/view/images/icons.jpg) -1px -1245px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.case_judgment:hover {background:url(/loms/view/images/icons.jpg) -154px -1245px no-repeat; width:150px; height:150px; }
+
+.template {background:url(/loms/view/images/icons.jpg) -1px -1400px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.template:hover {background:url(/loms/view/images/icons.jpg) -154px -1400px no-repeat; width:150px; height:150px; }
+
+.bookself {background:url(/loms/view/images/icons.jpg) -1px -1555px no-repeat; width:150px; height:150px; float:left; margin:10px 20px; cursor:pointer;}
+.bookself:hover {background:url(/loms/view/images/icons.jpg) -154px -1555px no-repeat; width:150px; height:150px; }
+
+
+/*------------detail Page----------------*/
+#detail_page {width:800px; padding:10px; height:650px; background:#F0F0F0; margin:0 auto;}
+.main_box {background:url(/loms/view/images/detailmainbox.jpg) no-repeat center center; width:800px; height:210px; margin-bottom:10px;}
+.main_box .left {width:50%; float:left;}
+.main_box .left .cont1 ul {padding:0; margin:0;}
+.cont1 ul li{ float:none; font-size:12px; text-align:left;  margin:8px 5px; border:0px}
+.cont2 ul li{ float:none; font-weight:normal; font-size:12px; margin:8px 5px; border:0px }
+
+.main_box .right {width:50%; float:right;}
+.cont1 {width:40%; float:left; }
+.cont2 {width:60%; float:right; }
+
+
+.small_box_container {width:780px;}
+.smallbox {float:left; width:240px; margin-left:10px; min-height:175px; background:#fff; border:#C0C0C0 1px solid; padding:5px;}
+.smallbox ul {width:50%; float:left; padding:0px; margin:0px;}
+.smallbox ul li {float:none; font-size:12px; list-style:none inside;}
+
+#comments {width:250px; min-height:100px; background:#fff; border:#C0C0C0 1px solid; padding:5px; 	}
+
+.button {background:#092749; font-size:14px; font-weight:bold; color:#FFFFFF; padding:5px 15px; width:auto; cursor:pointer;}
+.button:hover {background:#214976;}
+
+
+

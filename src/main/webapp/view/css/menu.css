@@ -1,0 +1,59 @@
+/* CSS Document */
+
+#navigation {
+	color: white;
+	background:#406287;
+	margin:1px 0; /*bottom spacing between header and rest of content*/
+	line-height:20px;
+	padding: 0px 10px; /*31px is left indentation of header text*/
+	height:30px;
+}
+ul {
+    font-size: 10px;
+	font-weight:bold;
+    padding: 0;
+    list-style: none;
+}
+ul.menu li {
+    display: block;
+    position: relative;
+    float: left;
+	padding:5px 10px;
+}
+li ul {
+    display: none;
+}
+ul li:last-child{border:0px}
+ul li {
+    display: block;
+    border-right: 1px solid #ffffff;
+    padding: 5px 15px;
+}
+ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+ul.menu li:hover {
+background: #3b3b3b;
+
+}
+li:hover ul {
+    display: block;
+    position: absolute;
+	margin-left:-15px;
+	padding-top:5px
+}
+li:hover li {
+    float: none;
+    font-size: 9px;
+	width:200px;
+	background: #3b3b3b;
+	border:0px;
+	text-transform:none;
+}
+
+li:hover li:hover {
+    background: #1e7c9a;
+}
+

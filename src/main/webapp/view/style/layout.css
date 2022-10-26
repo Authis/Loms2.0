@@ -1,0 +1,215 @@
+@charset "utf-8";
+/* CSS Document */
+/* Common---------------------------------------------*/
+@import url("always.css");
+
+body {
+	background:#fff;
+	color:#006;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 76%;
+	margin:0 auto;
+	padding:0px;
+	margin-top:0px;
+	/*min-width:730px; /* min- and max-width don't work in IE Win 6 and below */
+	
+	}
+	
+a { color:#006; outline:none}
+a:hover { text-decoration:underline; }
+
+
+/* Page Structure (layout)
+---------------------------------------------*/
+
+#layout {
+	margin:0px auto;
+	width:98%;
+	padding-left:10px;
+	padding-right:10px;
+	position:relative;
+	display:block;
+	
+	
+	}
+#body{
+	position:relative; 
+	background-color:#f8f8f8;
+	display:inline-block; 
+	width:99.5%; 
+	padding-left:8px;
+
+}
+ #left_nav /*, #middle */{
+	overflow:hidden;
+	display:inline-block;
+	}
+	#top_wrap{
+	width:100%;
+	margin:0px 0px 0px 0px;/* minus 15px fix only for mozilla, chrome*/
+	display:block;
+
+	height:170px;
+	}
+#topbar{
+	width:100%;
+	margin:0px 0px 0px 0px;/* minus 15px fix only for mozilla, chrome*/
+	float:left;
+	
+	background:url(../img/landing.png) repeat-x top;
+	height:170px;
+	}
+	#logo
+	{
+	width:400px;
+	height:74px;
+	float:left;
+	background:url(../img/logo.png) no-repeat top;
+	margin:15px;
+		}
+	#top_links
+	{
+	width:50%;
+	float:right;
+	font-size:12px;
+	font-weight:bold;
+	margin:5px;
+	text-align:right;
+	
+	}
+	#top_links a:link,#top_links a:visited
+	{
+	color:#fff;
+	text-decoration:none;
+	padding:0px 3px;
+	}
+	#user_info
+	{
+	width:100%;
+	float:left;
+	padding:5px;
+	color:#333;
+	font-weight:bold;
+	margin:20px 0px;
+	
+	
+	}
+	#footer {
+	width:100%;
+	}
+
+#left_nav {
+	float:left; /* min-width doesn't work in IE Win 6 and below */
+	width:20%;
+	/*margin-right: 2px;*/
+	margin-left: 0px;
+	margin-top: 4px;
+	margin-bottom: 0px;
+	background-color: #fff;
+	padding-bottom: 0px;
+	display: inline-block;
+	position:relative;
+	}
+	
+	/* LHS_menu
+---------------------------------------------*/
+.glossymenu{
+	padding: 0;
+	width: 100%; /*width of menu*/
+	overflow: hidden;
+}
+
+.glossymenu a.menuitem{
+	background-color:#F5F5F5;
+	font-size: 12px;
+	font-weight:bold;
+	color:#00467d;
+	display: block;
+	position: relative; /*To help in the anchoring of the ".statusicon" icon image*/
+	width: auto;
+	padding: 6px 0;
+	padding-left: 10px;
+	text-decoration: none;
+	
+}
+
+
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active{
+color: #00467d;
+}
+
+.glossymenu a.menuitem .statusicon{ /*CSS for icon image that gets dynamically added to headers*/
+position: absolute;
+top: 5px;
+right: 5px;
+border: none;
+}
+
+.glossymenu a.menuitem:hover{
+background-image:url(../img/glossyback.gif);
+
+color:#fff;
+}
+
+
+.highlt{
+background-image:url(../img/glossyback.gif);
+color:#fff !important;
+}
+
+
+.glossymenu div.submenu{ /*DIV that contains each sub menu*/
+background: white;
+}
+
+.glossymenu div.submenu ul{ /*UL of each sub menu*/
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.glossymenu div.submenu ul li{
+border-bottom: 1px dotted #c1c4c0;
+}
+
+.glossymenu div.submenu ul li a{
+	display: block;
+	font-size:12px;
+	color: black;
+	text-decoration: none;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 0;
+	padding-bottom: 5px;
+}
+
+.glossymenu div.submenu ul li a:hover,.glossymenu div.submenu ul li a:focus{
+background-color: #f2d889;
+color: #000;
+}
+
+
+
+#middle{
+	float:left;
+	margin:0 0 0 0px;
+	padding:4px 4px 4px 0px;
+	margin-bottom:5px;
+	position:relative;
+	width:79%;
+	}
+.footer
+{
+background:#32486c;
+border-top:2px #768aa8 solid;
+color:#fff;
+width:100%;
+height:25px;
+position: fixed;
+bottom:0px;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+padding-top:10px;
+text-align:right;
+}

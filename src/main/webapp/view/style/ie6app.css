@@ -1,0 +1,56 @@
+
+/* CSS Document */
+
+#title_logo h2 { /* Business Descriptor */
+	float:right;
+	font-size:1.6em;
+	font-weight:normal;
+	padding-top:25px;
+	padding-right:10px;
+	color:#339900;
+}
+
+#downloads{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	float:right;
+	position:relative;
+	display:inline-block;
+	margin-top:15px;
+	clear:both;
+}
+#btn_wrap{
+float:right;
+font-weight:bold;
+}
+button {
+height:24px;
+color:#fff;
+font-weight:bold;
+border:none;
+margin:5px 5px 5px 0px;
+padding:0px;
+background:none;
+cursor:default;
+
+/*float:right;*/
+}
+button p{
+background:url(../img/btn_lft.gif) no-repeat left;
+height:22px;
+padding:0 0px 0 10px;
+margin:0px;
+}
+button span{
+background:url(../img/btn_rht.gif) no-repeat right;
+height:22px;
+display:inline-block;
+padding:4px 10px 0 0px;
+margin-top:-2px;
+white-space:nowrap;
+}
+/*form{
+width:100%;
+overflow-x:auto;
+}*/

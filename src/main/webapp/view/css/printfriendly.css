@@ -1,0 +1,101 @@
+body {
+  color : #000000;
+  background : #FFFFFF;
+  font-family : "Times New Roman", Times, serif;
+  font-size : 12pt;
+}
+
+.header-bar {
+ 	background:url(/loms/view/images/landing.png) repeat-x top;
+    height: 50px;
+    overflow: hidden;
+    color: white;
+    font-family: fantasy;
+    font-size: 1em
+}
+
+.cmtbrod {
+    border:1px solid black;
+}
+
+    input.groovybutton
+{
+    cursor: pointer;
+    background-color: #1383F2;
+    background-image: -moz-linear-gradient(#1383F2, #1383F2);
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 11px;
+   /* width: auto;*/
+    border:1px #1383F2 solid;
+    border-radius:4px;
+    
+}
+ 
+/* gird controls
+-------------------------------------------------------*/
+table.grid thead{
+background-color:#D5D8E6;
+/*background-image: url(../img/tbl_hdr_bg.jpg) repeat-x !important;*/
+width:100%;
+}
+table.grid thead tr th, table.grid tfoot tr th {
+	/*background-color:#D5E3EE;*/
+	color:#022F52;
+	padding:8px 8px 8px 4px;
+	text-align:left;
+	
+}
+#search_result{
+ background-color:#f6efe9;
+ height:35px;
+ border-top:solid 1px #ebd5c5;
+ padding:0 10px 0 0px;
+ margin-top:15px;
+ 
+ }
+#search_result p{
+	display:block;
+	margin-top:8px;
+	padding:0px 0 0px 18px;
+	font-size:140%;
+	font-weight:bold;
+	color:#c85600;
+}
+#search_result button {
+height:24px;
+color:#666;
+font-weight:bold;
+border:none;
+margin:5px 5px 5px 0px;
+padding:0px;
+background:none;
+cursor:default;
+}
+#search_result button p{
+background:url(../img/grd_btn_lft.gif) no-repeat left;
+height:22px;
+padding:0 0px 0 10px;
+margin:0px;
+}
+#search_result button span{
+background:url(../img/grd_btn_rht.gif) no-repeat right;
+height:22px;
+display:inline-block;
+padding:4px 10px 0 0px;
+margin-top:-2px;
+}
+#search_result .control{
+float:left;
+display:inline-block;
+background:url(../img/pointer.gif) no-repeat center left;
+padding-left:15px;
+}
+#search_result .search{
+float:right;
+display:inline-block;
+}
+/* END: grid controls----------------------------------*/
+ 

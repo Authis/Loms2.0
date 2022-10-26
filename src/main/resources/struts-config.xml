@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans> 
+		<form-bean name="addcltmgmtfrm"	type="org.apache.struts.validator.DynaValidatorActionForm">	
+			<form-property name="filePath"	type="org.apache.struts.upload.FormFile"/>
+		</form-bean>
+   </form-beans>
+   
+ 
+	 <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+	 <message-resources parameter="resources.application"/>
+	 <message-resources  parameter="Admin" key="Admin"/>
+	 <message-resources  parameter="ApplicationResources" />
+
+	      
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validation/validator-rules.xml,/WEB-INF/validation/validation.xml"/>
+	</plug-in>
+
+</struts-config>
