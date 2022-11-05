@@ -440,13 +440,14 @@ public class ClientInfo extends ActionSupport implements SessionAware {
 	
 
 	public String addClientInfo() {
-		ArrayList<String> emailList = new ArrayList<String>();
+ 		ArrayList<String> emailList = new ArrayList<String>();
 		retEmpType = (String) session.get("retEmpType"); // Variable used to Restricting menu for USER and ADMIN 
 		
 		loginbean = (LoginBean) session.get("loginbean");
 		String ret = "";
 		String username = "";
 		String password = "";
+		System.out.println(">>> 111111111:"+loginbean.getUserName());
 		if (loginbean != null) {
 			username = loginbean.getUserName();
 			password = loginbean.getPassWord();
@@ -458,7 +459,7 @@ public class ClientInfo extends ActionSupport implements SessionAware {
 			retClientID = clientinfodoa.addClientInfo(addClientBean, username,password);
 			String emailid = addClientBean.emailid;
 			addClientBean = null;  /* To make client page reset */
-			if(retClientID != "E9999"  ){
+ 			if(retClientID != "E9999"  ){
 				    mailDataBean = clientinfodoa.sendClientMail(retClientID,username,password);			 
 					String sendermailId = mailDataBean.getFromEmailIDOUT();
 					String senderPass = mailDataBean.getFromEmailPwdOUT();

@@ -20,8 +20,7 @@ public class ClientInfoDoa {
 		String retErr = "";
 		Connection connection = null;
 		try {
-			
-			connection = RakshaDBUtil.getCon(username, password);
+ 			connection = RakshaDBUtil.getCon(username, password);
 			CallableStatement callStmt = connection
 					.prepareCall("{call LOMS_OFFICE_PKG.AddClientInfo(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 			callStmt.setString(1, addClientBean.getFirstname());
@@ -57,7 +56,7 @@ public class ClientInfoDoa {
 			callStmt.close();
 			// connection.close();
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}finally{
 			try {
 				connection.close();

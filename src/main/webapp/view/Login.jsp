@@ -18,7 +18,7 @@
 				.open(url, "_blank",
 						'resizable=no,width=350,height=400,scrollbars=yes,left=30,top=30,status=yes');
 
-		// window.open('/loms/view/ClientID.jsp','','width=300,height=300'); 
+		// window.open('loms/view/ClientID.jsp','','width=300,height=300');
 	}
 	 
 	function popOnload() {
@@ -30,6 +30,7 @@
 	}
 
 	function onclickaction(formname, actionname) {
+
 		var val = document.forms["loginfrm"].language.value;
 
 		if (document.getElementById(formname)) {

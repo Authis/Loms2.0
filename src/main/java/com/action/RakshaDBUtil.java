@@ -16,8 +16,8 @@
  			try	{
  			 Class.forName( "oracle.jdbc.driver.OracleDriver" ); 			 
 			 String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + sid;
-			 con = DriverManager.getConnection( url, "LOMS_MSTR", "LOMS_MSTR" );  			 
-			 			 
+			 con = DriverManager.getConnection( url, "LOMS_MSTR", "LOMS_MSTR" );
+			 con.setAutoCommit(false);
  			}catch( Exception e ){
  				//e.printStackTrace(); 
  				 	
@@ -34,7 +34,8 @@
 		try	{
 		 Class.forName( "oracle.jdbc.driver.OracleDriver" ); 			 
 		 String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + sid;
-		 con = DriverManager.getConnection( url, username, password);  		
+		 con = DriverManager.getConnection( url, username, password);
+		 con.setAutoCommit(false);
 		 con.commit();
 		 			 
 		}catch( Exception e ){
@@ -60,9 +61,10 @@ public static String checkCon(String username, String password){
 		try	{
 		 Class.forName( "oracle.jdbc.driver.OracleDriver" ); 			 
 		 String url = "jdbc:oracle:thin:@" + serverName + ":" + portNumber + ":" + sid;
-		 con = DriverManager.getConnection( url, username, password);  		
- 
+		 con = DriverManager.getConnection( url, username, password);
+		 con.setAutoCommit(false);
 		 con.commit();
+
 		 connectionStr = "SUCESS";			 
 		}catch( Exception e ){		 
 			System.out.println("------------>"+e);			 
